@@ -105,6 +105,11 @@
     };
     skloniBlokove();
 
+    $("input[name=http_zahtev]").on('click', prikaziBlok);
+    $("input[name=odabir_tabele]").on('click', resetHTTP);
+    $("button").on('click', posaljiZahtev);
+
+
     function prikaziBlok() {
         switch ($("input[name=http_zahtev]:checked")[0].id) {
             case "get":
@@ -245,17 +250,9 @@
                     }
                     break;
                 default:
-                    console.log("Neuspesan zahtev!");
+                    console.log("default");
             }
         }
     }
-
-    $("input[name=http_zahtev]").on('click', prikaziBlok);
-    $("input[name=odabir_tabele]").on('click', resetHTTP);
-    $("button").on('click', posaljiZahtev);
-
-
-
 </script>
-
 </html>
